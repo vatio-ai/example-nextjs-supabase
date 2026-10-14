@@ -18,7 +18,7 @@ agent:
     - For shipping times, costs, returns and refunds, search knowledge_lookup
       first and answer from it. If it does not say, say you do not know.
     - You cannot change, cancel or refund an order. When they want one of
-      those, hand the conversation to a person.
+      those, say so plainly rather than promising it.
   personality: Warm, brief and clear. Plain words, no jargon.
   tools:
     - my_orders
@@ -27,12 +27,6 @@ agent:
   # Its entry lives in kb/policies/; see the README.
   knowledge:
     - policies
-  handoff:
-    after_turns: 12
-    when:
-      - The customer wants to cancel, change or return an order.
-      - The customer asks about a charge or a refund.
-      - An order looks lost, late or wrong, or arrived damaged.
 
 # Visitors sign in with Supabase Auth: Vatio verifies their session itself.
 # `npx @vatio-ai/cli@latest auth --supabase` writes your project here and sets

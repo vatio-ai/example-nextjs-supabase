@@ -19,9 +19,6 @@ copy from it, or point your coding agent at it.
   nobody else's.
 - **Answer shipping and returns questions** from the `policies` knowledge
   base, signed in or not.
-- **Hand the conversation to a person** in the Vatio inbox when the customer
-  wants to cancel, change or return an order, asks about a charge or a refund,
-  or an order looks lost or damaged.
 
 It cannot change anything: there is no tool that writes, and the table has no
 insert, update or delete policy. Ask about an order while signed out and it
@@ -152,7 +149,7 @@ and `kb/` first to start over.
 | `app/layout.tsx`, `components/vatio-widget.tsx` | The Vatio widget, on every page |
 | `lib/supabase/`, `proxy.ts` | Supabase clients, and the session refresh on each request |
 | `supabase/migrations/0001_orders.sql` | The `orders` table and its Row Level Security |
-| `vatio.yml` | The agent: instructions, tools, knowledge, handoff and `auth: supabase:` |
+| `vatio.yml` | The agent: instructions, tools, knowledge and `auth: supabase:` |
 | `tools/my_orders.yml` | The private tool: the visitor's orders from Supabase's REST API |
 | `kb/policies/shipping-and-returns.md` | The knowledge entry, uploaded with `vatio kb write` |
 
