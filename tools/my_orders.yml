@@ -1,0 +1,20 @@
+description: The signed-in customer's own orders, newest first, with the item, its status and when it was placed.
+when_to_use: They ask about their own orders, such as where an order is, what they ordered, or whether it shipped.
+access: private
+request:
+  method: GET
+  base_url: $env.SUPABASE_URL
+  path: /rest/v1/orders
+  query:
+    select: "id,item,status,created_at"
+    order: "created_at.desc"
+    limit: "20"
+  headers:
+    apikey: $env.SUPABASE_ANON_KEY
+    Authorization: Bearer $auth.token
+respond:
+  data:
+    orders: "$"
+  message:
+    when_empty: They have no orders yet.
+    default: "Found {{count}} orders."
