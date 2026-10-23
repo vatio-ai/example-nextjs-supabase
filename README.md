@@ -107,21 +107,21 @@ preview and prints a `Try it:` link to the Test page in the Vatio inbox.
 
 ### Put the chat in the app
 
-The widget needs a publishable token (`vatpub_…`), and each token works only
-from the origins it lists. For this app on your machine, a preview token for
+The widget needs a publishable key (`vatpub_…`), and each key works only
+from the origins it lists. For this app on your machine, a preview key for
 `http://localhost:3000`:
 
 ```bash
-vatio tokens create --env preview --label local --origin http://localhost:3000
+vatio keys create publishable --env preview --label local --origin http://localhost:3000
 ```
 
-Put the token it prints in `.env.local` as `NEXT_PUBLIC_VATIO_TOKEN`, your slug
+Put the key it prints in `.env.local` as `NEXT_PUBLIC_VATIO_TOKEN`, your slug
 as `NEXT_PUBLIC_VATIO_WORKSPACE`, and restart `npm run dev`. To change a
-token's origins later: `vatio tokens origins PREFIX URL...`.
+key's origins later: `vatio keys origins PREFIX URL...`.
 
 When it is ready for customers, `vatio publish` takes preview live, and a live
-token lists your site's origin:
-`vatio tokens create --label website --origin https://your-app.com`. For
+key lists your site's origin:
+`vatio keys create publishable --label website --origin https://your-app.com`. For
 WhatsApp and Instagram, add your deployed login page:
 `vatio auth --supabase --sign-in-url https://your-app.com/login`.
 
