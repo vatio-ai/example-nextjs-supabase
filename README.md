@@ -59,7 +59,7 @@ You need Node.js 20.9 or newer and a Supabase project.
    - Vatio needs the project to sign with an asymmetric key (ES256 or RS256).
      If it is still on the legacy JWT secret: **Project Settings → JWT Keys**,
      migrate, then rotate to the ES256 key. See
-     [Supabase in the Vatio docs](https://vatio.ai/docs/integrations/supabase).
+     [Supabase in the Vatio docs](https://vatio.ai/docs/authentication/supabase).
 2. **Fill in the environment.** `cp .env.example .env.local`, then set the
    Supabase URL and anon key. The Vatio values come in the next section;
    without them the app runs with no chat bubble.
@@ -153,7 +153,7 @@ and `kb/` first to start over.
 | `tools/my_orders.yml` | The private tool: the visitor's orders from Supabase's REST API |
 | `kb/policies/shipping-and-returns.md` | The knowledge entry, uploaded with `vatio kb write` |
 
-Docs: [Supabase](https://vatio.ai/docs/integrations/supabase) ·
+Docs: [Supabase](https://vatio.ai/docs/authentication/supabase) ·
 [Web widget](https://vatio.ai/docs/channels/widget) ·
 [Tools](https://vatio.ai/docs/tools) ·
 [Knowledge](https://vatio.ai/docs/knowledge)
